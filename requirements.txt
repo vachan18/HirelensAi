@@ -1,0 +1,31 @@
+# ── Multi-agent framework ──
+crewai>=0.28.0
+# crewai-tools removed — not imported anywhere in the codebase
+
+# ── Web dashboard ──
+streamlit>=1.32.0
+
+# ── Charts & data ──
+plotly>=5.18.0
+pandas>=2.0.0
+
+# ── PDF handling ──
+pypdf>=4.0.0
+# PyPDF2 removed — deprecated, fully superseded by pypdf (listed above)
+fpdf2>=2.7.0
+
+# ── LLM providers (install whichever you configure) ──
+anthropic>=0.20.0
+openai>=1.12.0
+litellm>=1.35.0
+# google-generativeai removed — CrewAI routes Gemini through litellm, not this package
+
+# ── Data validation ──
+pydantic>=2.6.0
+
+# ── Utilities ──
+python-dotenv>=1.0.0
+
+# ── Testing ──
+pytest>=8.0.0
+pytest-mock>=3.12.0
