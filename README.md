@@ -1,5 +1,10 @@
 # 🔍 HireLens AI — Multi-Agent Job Rejection Analyzer
 
+[![CI Tests](https://github.com/vachan18/HirelensAi/actions/workflows/ci.yml/badge.svg)](https://github.com/vachan18/HirelensAi/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![CrewAI](https://img.shields.io/badge/Orchestration-CrewAI-red.svg)](https://www.crewai.com/)
+[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
+
 > **See your application through the recruiter's lens.**
 
 HireLens AI is a full-stack AI application built with **CrewAI multi-agent orchestration**, a **Streamlit dashboard**, and a **premium animated intro**.
