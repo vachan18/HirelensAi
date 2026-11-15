@@ -1,0 +1,38 @@
+name: HireLens CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: hirelens-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Test Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pydantic pytest pytest-mock python-dotenv pypdf fpdf2 pandas plotly
+
+      - name: Run Test Suite
+        env:
+          HIRELENS_LLM_PROVIDER: "anthropic"
+        run: |
+          pytest tests/test_config.py tests/test_models.py -v
